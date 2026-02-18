@@ -81,49 +81,46 @@ student-performance-predictor/
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/student-performance-predictor.git
-cd student-performance-predictor
-2️⃣ Create Virtual Environment (Recommended)
-python -m venv venv
-Activate environment:
+    git clone https://github.com/YOUR_USERNAME/student-performance-predictor.git
+    cd student-performance-predictor
+### 2️⃣ Create Virtual Environment (Recommended)
+    python -m venv venv
+    # Activate environment:
+      Windows:
+      venv\Scripts\activate
+      Mac / Linux:
+      source venv/bin/activate
+### 3️⃣ Install Dependencies
+    pip install -r requirements.txt
+### 4️⃣ Run Application
+    python app.py
 
-Windows
+    Open in browser: http://127.0.0.1:5000
 
-venv\Scripts\activate
-Mac / Linux
-
-source venv/bin/activate
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-4️⃣ Run Application
-python app.py
-Open in browser:
-
-http://127.0.0.1:5000
-📈 Model Training
+---
+### 📈 Model Training
 To retrain the model:
-
-python train-model.py
+  python train-model.py
 This generates:
+  student_model.pkl
 
-student_model.pkl
-🔮 Example Prediction
-Input
+### 🔮 Example Prediction
+Input:
+  G1 = 12
+  G2 = 14
+  Absences = 4
+  Failures = 0
+  Study Time = 3 hrs/day
 
-G1 = 12
-G2 = 14
-Absences = 4
-Failures = 0
-Study Time = 3 hrs/day
-Output
-
+Output:
 Predicted G3 ≈ 13.6
 Result = PASS
-📚 Dataset Source
+------
+### 📚 Dataset Source
 UCI Machine Learning Repository
 Student Performance Dataset
 
-🌟 Future Improvements
+### 🌟 Future Improvements
 📱 Mobile Responsive UI
 
 ☁️ Cloud Deployment
@@ -135,9 +132,9 @@ Student Performance Dataset
 🤖 Explainable AI (Feature Contribution)
 
 👩‍💻 Author
-Anu
-Computer Science Student
-ML & Full Stack Developer
+#Anuhya Mattaparthi
+#Computer Science Student
+#ML & Full Stack Developer
 
-⭐ Support
+###⭐ Support
 If you like this project, give it a ⭐ on GitHub!

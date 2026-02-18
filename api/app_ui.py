@@ -25,22 +25,19 @@ def predict():
         # Validation
         if G1 < 0 or G1 > 20 or G2 < 0 or G2 > 20:
             return render_template("index.html",
-                                   error_message="Marks must be between 0 and 20.",
-                                   show_popup=True)
+                                   error_message="Marks must be between 0 and 20.")
 
         if absences < 0 or absences > 93:
             return render_template("index.html",
-                                   error_message="Absences must be between 0 and 93.",
-                                   show_popup=True)
+                                   error_message="Absences must be between 0 and 93.")
 
         if failures_input < 0:
             return render_template("index.html",
-                                   error_message="Failures cannot be negative.",
-                                   show_popup=True)
+                                   error_message="Failures cannot be negative.")
+
         if study_hours < 0:
             return render_template("index.html",
-                                   error_message="Study time cannot be negative.",
-                                   show_popup=True)
+                                   error_message="Study time cannot be negative.")
 
         # Convert study hours → dataset scale
         if study_hours < 2:
@@ -85,11 +82,11 @@ def predict():
             status_class=status_class
         )
 
-    except Exception as e:
+    except Exception:
         return render_template(
             "index.html",
             error_message="Invalid input. Please check your values."
         )
 
-# IMPORTANT FOR VERCEL
+# For Vercel
 app = app

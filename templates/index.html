@@ -14,14 +14,13 @@
 body{
     font-family: 'Segoe UI', sans-serif;
     width:100%;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
     color:white;
-    padding:40px;
 }
-
 
 /* Glass Card */
 .card{
@@ -37,7 +36,6 @@ body{
     animation:fadeUp 0.8s ease;
 }
 
-
 @keyframes fadeUp{
     from{opacity:0; transform:translateY(40px);}
     to{opacity:1; transform:translateY(0);}
@@ -46,10 +44,8 @@ body{
 h2{
     margin-bottom:30px;
     font-weight:600;
-    letter-spacing:0.5px;
 }
 
-/* Inputs */
 input{
     width:100%;
     padding:14px;
@@ -70,10 +66,8 @@ input::placeholder{
 input:focus{
     background:rgba(0,255,255,0.15);
     box-shadow:0 0 10px rgba(0,255,255,0.4);
-    transform:scale(1.03);
 }
 
-/* Button */
 button{
     width:100%;
     padding:14px;
@@ -93,7 +87,6 @@ button:hover{
     box-shadow:0 12px 25px rgba(0,0,0,0.4);
 }
 
-/* Result Card */
 .result-card{
     margin-top:25px;
     padding:18px;
@@ -108,23 +101,36 @@ button:hover{
     to{transform:scale(1); opacity:1;}
 }
 
-/* Status Colors */
 .pass-text{
     color:#00ffb3;
     font-weight:bold;
-    text-shadow:0 0 10px rgba(0,255,179,0.6);
 }
 
 .fail-text{
     color:#ff4d6d;
     font-weight:bold;
-    text-shadow:0 0 10px rgba(255,77,109,0.6);
 }
 
-/* Error */
-.error{
-    background:linear-gradient(135deg,#ff9a00,#ffcc00);
-    color:black;
+/* Toast Popup */
+.toast{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+    color:white;
+    padding:16px 22px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    opacity:0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    z-index:9999;
+    pointer-events:none;
+}
+
+.toast.show{
+    opacity:1;
+    transform: translateY(0);
 }
 </style>
 </head>
@@ -133,7 +139,7 @@ button:hover{
 
 <div class="card">
 
-<h2> Student Performance Predictor</h2>
+<h2>Student Performance Predictor</h2>
 
 <form action="/predict" method="post">
     <input type="number" name="G2" placeholder="G2 Marks (0-20)" required>
@@ -152,14 +158,22 @@ button:hover{
 </div>
 {% endif %}
 
-{% if show_popup and error_message %}
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+{% if error_message %}
 <script>
-    alert("{{ error_message }}");
+const toast = document.getElementById("toast");
+toast.innerText = "{{ error_message }}";
+toast.classList.add("show");
+
+setTimeout(()=>{
+    toast.classList.remove("show");
+},3500);
 </script>
 {% endif %}
-
-
-</div>
 
 </body>
 </html>

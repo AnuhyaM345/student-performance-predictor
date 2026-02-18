@@ -29,18 +29,31 @@ A Machine Learning powered web application that predicts a student’s final exa
 ## 📂 Project Structure
 
 student-performance-predictor/
+
 │
+
 ├── app.py
+
 ├── train-model.py
+
 ├── predict.py
+
 ├── student_model.pkl
+
 ├── student-por.csv
+
 ├── requirements.txt
+
 │
+
 ├── templates/
+
 │ └── index.html
+
 │
+
 └── README.md
+
 
 
 ---
@@ -81,63 +94,87 @@ student-performance-predictor/
 
 ### 1️⃣ Clone Repository
 ```bash
-    git clone https://github.com/YOUR_USERNAME/student-performance-predictor.git
-    cd student-performance-predictor
+git clone https://github.com/AnuhyaM345/student-performance-predictor.git
+cd student-performance-predictor
+```
 
 ### 2️⃣ Create Virtual Environment (Recommended)
-    python -m venv venv
-    # Activate environment:
-      Windows:
-      venv\Scripts\activate
-      Mac / Linux:
-      source venv/bin/activate
+```bash
+python -m venv venv
+```
+## Activate environment:
+  ### Windows:
+  ```bash
+  venv\Scripts\activate
+  ```
+  ### Mac / Linux:
+  ```bash
+  source venv/bin/activate
+  ```
 
 ### 3️⃣ Install Dependencies
-    pip install -r requirements.txt
+ ```bash   
+pip install -r requirements.txt
+```
 
 ### 4️⃣ Run Application
-    python app.py
-
-    Open in browser: http://127.0.0.1:5000
+```bash
+python app.py
+```
+Open in browser: http://127.0.0.1:5000
 
 ------
 ### 📈 Model Training
 To retrain the model:
-  python train-model.py
+```bash  
+python train-model.py
+```
 This generates:
-  student_model.pkl
+student_model.pkl
+
+-----------
 
 ### 🔮 Example Prediction
+
 Input:
-  G1 = 12
-  G2 = 14
-  Absences = 4
-  Failures = 0
-  Study Time = 3 hrs/day
+  G1 = 12,
+  G2 = 14,
+  Absences = 4,
+  Failures = 0,
+  Study Time = 3 hrs/day,
 
 Output:
-Predicted G3 ≈ 13.6
+Predicted G3 ≈ 13.6, 
 Result = PASS
+
 ------
 ### 📚 Dataset Source
 UCI Machine Learning Repository
 Student Performance Dataset
+
+------
 
 ### 🌟 Future Improvements
 📱 Mobile Responsive UI
 
 ☁️ Cloud Deployment
 
-📊 Prediction Confidence Visualization
+📊 Prediction Confidence Visualisation
 
 🧾 PDF Report Export
 
 🤖 Explainable AI (Feature Contribution)
 
-👩‍💻 Author
-#Anuhya Mattaparthi
-#Computer Science Student
-#ML & Full Stack Developer
+--------
 
-###⭐ Support
-If you like this project, give it a ⭐ on GitHub!
+👩‍💻 Author
+------------
+Anuhya Mattaparthi
+
+CSE'26 at IFHE
+
+ML & Full Stack Developer
+
+------------
+
+## If you like this project, give it a ⭐ on GitHub!

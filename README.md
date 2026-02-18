@@ -83,6 +83,7 @@ student-performance-predictor/
 ```bash
     git clone https://github.com/YOUR_USERNAME/student-performance-predictor.git
     cd student-performance-predictor
+
 ### 2️⃣ Create Virtual Environment (Recommended)
     python -m venv venv
     # Activate environment:
@@ -90,14 +91,16 @@ student-performance-predictor/
       venv\Scripts\activate
       Mac / Linux:
       source venv/bin/activate
+
 ### 3️⃣ Install Dependencies
     pip install -r requirements.txt
+
 ### 4️⃣ Run Application
     python app.py
 
     Open in browser: http://127.0.0.1:5000
 
----
+------
 ### 📈 Model Training
 To retrain the model:
   python train-model.py

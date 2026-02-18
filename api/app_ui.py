@@ -25,19 +25,22 @@ def predict():
         # Validation
         if G1 < 0 or G1 > 20 or G2 < 0 or G2 > 20:
             return render_template("index.html",
-                                   error_message="Marks must be between 0 and 20.")
+                                   error_message="Marks must be between 0 and 20.",
+                                   show_popup=True)
 
         if absences < 0 or absences > 93:
             return render_template("index.html",
-                                   error_message="Absences must be between 0 and 93.")
+                                   error_message="Absences must be between 0 and 93.",
+                                   show_popup=True)
 
         if failures_input < 0:
             return render_template("index.html",
-                                   error_message="Failures cannot be negative.")
-
+                                   error_message="Failures cannot be negative.",
+                                   show_popup=True)
         if study_hours < 0:
             return render_template("index.html",
-                                   error_message="Study time cannot be negative.")
+                                   error_message="Study time cannot be negative.",
+                                   show_popup=True)
 
         # Convert study hours → dataset scale
         if study_hours < 2:

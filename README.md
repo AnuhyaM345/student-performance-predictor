@@ -4,6 +4,10 @@ A Machine Learning powered web application that predicts a student’s final exa
 
 ---
 
+### Deployed at https://student-performance-predictor-pi.vercel.app/
+
+----
+
 ## 🚀 Features
 
 - 🤖 ML Prediction using Random Forest Regressor  

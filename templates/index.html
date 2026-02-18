@@ -27,7 +27,7 @@ body{
 /* Glass Card */
 .card{
     width:100%;
-    max-width:900px;
+    max-width:500px;
     padding:50px;
     border-radius:25px;
     backdrop-filter: blur(25px);
@@ -150,12 +150,6 @@ button:hover{
 <div class="result-card">
     <h3>Predicted Marks: {{ prediction_text }}</h3>
     <h3 class="{{ status_class }}">Status: {{ result }}</h3>
-</div>
-{% endif %}
-
-{% if error_message %}
-<div class="result-card error">
-    <h3>{{ error_message }}</h3>
 </div>
 {% endif %}
 
